@@ -63,4 +63,8 @@ public class CarrinhoSuperMercado {
 	public void ordenaProdutosPeloNome() {
 		Collections.sort(listaDeProdutos);
 	}
+
+	public List<Produto> getListaDeProdutos() {
+		return listaDeProdutos;
+	}
 }

@@ -19,7 +19,7 @@ public class Produto implements Comparable<Produto> {
 		if (tipo.equals("no peso")){
 			calculaPreco = new CalculaProdutoNoPeso(precoBase, quantidade, peso);
 		}
-		if (tipo.equals("na quantidade")){
+		if (tipo.equals("em quantidade")){
 			calculaPreco = new CalculaProdutoNaQuantidade(precoBase, quantidade, peso);
 		}
 		
@@ -45,5 +45,10 @@ public class Produto implements Comparable<Produto> {
 	@Override
 	public int compareTo(Produto outroProduto) {
 		return this.nome.compareTo(outroProduto.getNome());
+	}
+	
+	@Override
+	public String toString() {
+		return nome;
 	}
 }
