@@ -1,6 +1,7 @@
 package CarrinhoSuperMercado;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 	
 public class CarrinhoSuperMercado {
@@ -59,4 +60,7 @@ public class CarrinhoSuperMercado {
 		return precoTotal;
 	}
 	
+	public void ordenaProdutosPeloNome() {
+		Collections.sort(listaDeProdutos);
+	}
 }

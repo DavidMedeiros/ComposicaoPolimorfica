@@ -1,6 +1,6 @@
 package CarrinhoSuperMercado;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
 	
 	private String nome;
 	private double precoBase;
@@ -19,7 +19,7 @@ public class Produto {
 		if (tipo.equals("no peso")){
 			calculaPreco = new CalculaProdutoNoPeso(precoBase, quantidade, peso);
 		}
-		if (tipo.equals("no peso")){
+		if (tipo.equals("na quantidade")){
 			calculaPreco = new CalculaProdutoNaQuantidade(precoBase, quantidade, peso);
 		}
 		
@@ -40,5 +40,10 @@ public class Produto {
 
 	public double getPeso() {
 		return peso;
+	}
+
+	@Override
+	public int compareTo(Produto outroProduto) {
+		return this.nome.compareTo(outroProduto.getNome());
 	}
 }
