@@ -1,11 +1,12 @@
 package CarrinhoSuperMercado;
 
-public abstract class Produto {
+public class Produto {
 	
 	private String nome;
 	private double precoBase;
 	private int quantidade;
 	private double peso;
+	private Calculadora calculaPreco;
 	
 	public Produto(String nome, double precoBase, int quantidade, double peso){
 		this.nome = nome;
@@ -14,7 +15,16 @@ public abstract class Produto {
 		this.peso = peso;
 	}
 	
-	public abstract double calculaPrecoProduto();
+	public double calculaPrecoProduto(String tipo){
+		if (tipo.equals("no peso")){
+			calculaPreco = new CalculaProdutoNoPeso(precoBase, quantidade, peso);
+		}
+		if (tipo.equals("no peso")){
+			calculaPreco = new CalculaProdutoNaQuantidade(precoBase, quantidade, peso);
+		}
+		
+		return calculaPreco.calculaPrecoProduto();
+	}
 
 	public String getNome() {
 		return nome;

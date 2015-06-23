@@ -48,12 +48,12 @@ public class CarrinhoSuperMercado {
 		return produtoEmMaiorQuantidade;
 	}
 	
-	public double precoTotalCarrinho() {
+	public double precoTotalCarrinho(String tipo) {
 		
 		double precoTotal = 0;
 		
 		for (Produto produto : listaDeProdutos) {
-			precoTotal = precoTotal + produto.calculaPrecoProduto();
+			precoTotal = precoTotal + produto.calculaPrecoProduto(tipo);
 		}
 		
 		return precoTotal;
